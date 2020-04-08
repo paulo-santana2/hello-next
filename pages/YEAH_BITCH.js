@@ -1,4 +1,4 @@
-export default function Yeah() => {
+export default function Yeah() {
   return (
     <p>FUNCIONAAAAAAAAAA</p>
   );
