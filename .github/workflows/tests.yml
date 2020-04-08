@@ -3,6 +3,13 @@ name: Testes workflows
 on: [deployment_status]
 
 jobs:
+  greet:
+    name: Dizer oi
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer oi
+        run: echo "Oi!"
+
   mark-commit-status-pending:
     name: Marcar "status" do commit como "pending"
     if: github.event.deployment_status.state == 'pending'
