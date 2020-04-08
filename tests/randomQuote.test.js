@@ -26,5 +26,5 @@ describe('/randomQuote (E2E)', () => {
   test('Teste inútil'), () => {
     const a = 1;
     expect(a).toEqual(1);
-  });
+  };
 });
