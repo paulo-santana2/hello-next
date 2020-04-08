@@ -61,7 +61,7 @@ jobs:
         if: always()
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
-        runs: |
+        run: |
           GITHUB_WORKFLOW_URL=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
           JOB_STATUS=$(echo ${JOB_CONTEXT} | jq --raw-output '.status | ascii_downcase')
           curl -L -X POST \
