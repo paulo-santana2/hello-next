@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "next",
-     "build": "next build",
-     "start": "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "jest": "^25.2.7",
+    "wait-on": "^4.0.1"
   }
 }
