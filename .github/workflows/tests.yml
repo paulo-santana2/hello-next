@@ -5,6 +5,7 @@ on: [pull_request, deployment_status]
 jobs:
   show-github-information:
     name: Mostrar informações do github
+    runs-on: ubuntu-latest
     steps:
       - name: Mostrar a github.repository
         run: echo ${{ github.repository }}
