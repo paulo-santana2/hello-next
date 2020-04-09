@@ -27,8 +27,8 @@ describe('/randomQuote (E2E)', () => {
     const a = 1;
     expect(a).toEqual(1);
   });
-  
-  test('Outro teste inútil'), () => {
+
+  test('Outro teste inútil', () => {
     const a = 2;
     expect(a).toEqual(2);
   });
