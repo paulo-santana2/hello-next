@@ -3,11 +3,8 @@ name: Teste com deployment status
 on: [pull_request, deployment_status]
 
 jobs:
-  mark-commit-status-pending:
-    name: Marcar "status" do commit como "pending"
-    if: github.event.deployment_status.state == 'pending'
-    runs-on: ubuntu-latest
-
+  show-github-information:
+    name: Mostrar informações do github
     steps:
       - name: Mostrar a github.repository
         run: echo ${{ github.repository }}
@@ -18,6 +15,12 @@ jobs:
       - name: Mostrar a github.base_ref
         run: echo ${{ github.base_ref }}
 
+  mark-commit-status-pending:
+    name: Marcar "status" do commit como "pending"
+    if: github.event.deployment_status.state == 'pending'
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Fazer request contra API do Github com status "pending"
         run: |
           curl -L -X POST \
