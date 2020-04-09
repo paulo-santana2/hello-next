@@ -1,21 +1,23 @@
-name: Testes workflows
+name: Teste com deployment status
 
 on: [pull_request, deployment_status]
 
 jobs:
-  greet:
-    name: Dizer oi
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer oi
-        run: echo "Oi!"
-
   mark-commit-status-pending:
     name: Marcar "status" do commit como "pending"
     if: github.event.deployment_status.state == 'pending'
     runs-on: ubuntu-latest
 
     steps:
+      - name: Mostrar a github.repository
+        run: echo ${{ github.repository }}
+
+      - name: Mostrar a github.head_ref
+        run: echo ${{ github.head_ref }}
+
+      - name: Mostrar a github.base_ref
+        run: echo ${{ github.base_ref }}
+
       - name: Fazer request contra API do Github com status "pending"
         run: |
           curl -L -X POST \

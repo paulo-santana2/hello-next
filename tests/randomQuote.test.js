@@ -22,8 +22,8 @@ describe('/randomQuote (E2E)', () => {
       author: 'Guillermo Rauch',
     });
   });
-  
-  test('Teste inútil'), () => {
+
+  test('Teste inútil', () => {
     const a = 1;
     expect(a).toEqual(1);
   });
