@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mostrar o conteúdo da variável github
-        run: echo ${{ toJSON(github) }}
+        run: echo "${{ toJSON(github) }}"
 
   mark-commit-status-pending:
     name: Marcar "status" do commit como "pending"
