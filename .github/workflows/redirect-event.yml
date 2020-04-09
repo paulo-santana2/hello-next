@@ -11,7 +11,7 @@ jobs:
       - name: Disparando evento "repository_dispatch" pro repositório base
         run: |
           curl -L -X POST \
-          --url https://api.github.com/repos/paulo-santana/hello-next/dispatches
+          --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
           --header 'content-type: application/json' \
           --data '{
             "event_type": "deploy-pending"
