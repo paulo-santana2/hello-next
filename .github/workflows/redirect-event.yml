@@ -22,7 +22,6 @@ jobs:
           curl -L -X POST \
           --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
           --header 'content-type: application/json' \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --data '{
             "event_type": "deploy-pending"
             }'
