@@ -1,0 +1,12 @@
+name: Testes e2e
+
+on: repository_dispatch
+
+jobs:
+  mark-status-pending:
+    name: Marcar status como "pending"
+    if: github.event.repository_dispatch.event_type == 'deploy-pending'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer Oi
+        run: echo "Oi"
