@@ -8,5 +8,13 @@ jobs:
     if: github.event.repository_dispatch.event_type == 'deploy-pending'
     runs-on: ubuntu-latest
     steps:
-      - name: Dizer Oi
-        run: echo "Oi"
+      - name: Dizer o status
+        run: echo "O status agora está como 'pending'"
+
+  mark-status-success:
+    name: Marcar status como "success"
+    if: github.event.repository_dispatch.event_type == 'deploy-success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer o status
+        run: echo "O status agora está como 'success'"
