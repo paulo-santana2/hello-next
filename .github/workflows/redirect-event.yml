@@ -7,8 +7,8 @@ jobs:
     name: Expor os dados do evento
     runs-on: ubuntu-latest
     steps:
-      - name: echo ${{ toJson(github) }}
-        run: echo ${{ toJson(github) }}
+      - name: echo  toJson(github)
+        run: echo "${{ toJson(github) }}""
   redirect-status-to-base:
     name: Redirecionar status do deploy pro repositório base
     if: github.event.deployment_status.state == 'pending'
