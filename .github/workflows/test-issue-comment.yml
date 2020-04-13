@@ -1,8 +1,8 @@
 name: Testes Issue Comment
 
-on: 
+on:
   issue_comment:
-    types: edited
+    types: [edited]
 
 jobs:
   print-event:
