@@ -6,14 +6,14 @@ on:
 
 jobs:
   say-hello-if-edited:
-    if: github.event.action == "edited"
+    if: github.event.issue_comment.action == "edited"
     name: Dizer oi se o comentário foi editado
     runs-on: ubuntu-latest
     steps:
       - name: Oi
         run: echo "Oi"
   say-hello-if-created:
-    if: github.event.action == "created"
+    if: github.event.issue_comment.action == "created"
     name: Dizer ola se o comentário foi criado
     runs-on: ubuntu-latest
     steps:
