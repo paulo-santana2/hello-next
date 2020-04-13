@@ -1,0 +1,22 @@
+name: Testes Issue Comment
+
+on: 
+  issue_comment:
+    types: edited
+
+jobs:
+  print-event:
+    name: Print github.event
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dizer oi
+        run: echo "Oi"
+      - name: Printar a variável
+        run: echo "${{ github.event }}"
+
+  mark-status-success:
+    name: Print github
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printar a github
+        run: echo "${{ github }}"
