@@ -1,20 +1,20 @@
-name: Testes e2e
+# name: Testes e2e
 
-on: repository_dispatch
+# on: repository_dispatch
 
-jobs:
-  mark-status-pending:
-    name: Marcar status como "pending"
-    if: github.event.repository_dispatch.event_type == 'deploy-pending'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer o status
-        run: echo "O status agora está como 'pending'"
+# jobs:
+#   mark-status-pending:
+#     name: Marcar status como "pending"
+#     if: github.event.repository_dispatch.event_type == 'deploy-pending'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Dizer o status
+#         run: echo "O status agora está como 'pending'"
 
-  mark-status-success:
-    name: Marcar status como "success"
-    if: github.event.repository_dispatch.event_type == 'deploy-success'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer o status
-        run: echo "O status agora está como 'success'"
+#   mark-status-success:
+#     name: Marcar status como "success"
+#     if: github.event.repository_dispatch.event_type == 'deploy-success'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Dizer o status
+#         run: echo "O status agora está como 'success'"

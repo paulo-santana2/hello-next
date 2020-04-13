@@ -1,45 +1,45 @@
-name: Redirecionar eventos do Now
+# name: Redirecionar eventos do Now
 
-on: deployment_status
+# on: deployment_status
 
-jobs:
-  dump-data:
-    name: Expor os dados do evento
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo  toJson(github)
-        run: echo "${{ toJson(github) }}"
-  redirect-status-to-base:
-    name: Redirecionar status do deploy pro repositório base
-    if: github.event.deployment_status.state == 'pending'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer o que está fazendo
-        run: echo "Estou mandando o status 'deploy-pending' para o repositório base"
+# jobs:
+#   dump-data:
+#     name: Expor os dados do evento
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: echo  toJson(github)
+#         run: echo "${{ toJson(github) }}"
+#   redirect-status-to-base:
+#     name: Redirecionar status do deploy pro repositório base
+#     if: github.event.deployment_status.state == 'pending'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Dizer o que está fazendo
+#         run: echo "Estou mandando o status 'deploy-pending' para o repositório base"
 
-      - name: Disparando evento "repository_dispatch" pro repositório base
-        run: |
-          curl -v -L -X POST \
-          --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
-          --header 'content-type: application/json' \
-          --data '{
-            "event_type": "deploy-pending"
-            }'
+#       - name: Disparando evento "repository_dispatch" pro repositório base
+#         run: |
+#           curl -v -L -X POST \
+#           --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
+#           --header 'content-type: application/json' \
+#           --data '{
+#             "event_type": "deploy-pending"
+#             }'
 
-  redirect-status-to-base-again:
-    name: Redirecionar final pro repositório base
-    if: github.event.deployment_status.state == 'success'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dizer o que está fazendo de novo
-        run: echo "Estou mandando o status 'deploy-success' para o repositório base"
+#   redirect-status-to-base-again:
+#     name: Redirecionar final pro repositório base
+#     if: github.event.deployment_status.state == 'success'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Dizer o que está fazendo de novo
+#         run: echo "Estou mandando o status 'deploy-success' para o repositório base"
 
-      - name: Disparando evento "repository_dispatch" pro repositório base
-        run: |
-          curl -L -X POST \
-          --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
-          --header 'content-type: application/json' \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --data '{
-            "event_type": "deploy-success"
-            }'
+#       - name: Disparando evento "repository_dispatch" pro repositório base
+#         run: |
+#           curl -L -X POST \
+#           --url https://api.github.com/repos/paulo-santana/hello-next/dispatches \
+#           --header 'content-type: application/json' \
+#           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+#           --data '{
+#             "event_type": "deploy-success"
+#             }'
