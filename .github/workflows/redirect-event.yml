@@ -1,6 +1,6 @@
-# name: Redirecionar eventos do Now
+name: Redirecionar eventos do Now
 
-# on: deployment_status
+on: deployment_status
 
 # jobs:
 #   dump-data:
