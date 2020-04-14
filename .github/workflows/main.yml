@@ -17,7 +17,7 @@ jobs:
     
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: echo '${{ toJson(github) }}'
+      run: echo 'hi'
 
     #- name: Fazer request contra API do Github com status "pending"
     #  run: |
