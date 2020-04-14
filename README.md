@@ -24,3 +24,4 @@ update issue_comment 5
 update deployment
 
 update deployment_status
+update deployment_status 2
