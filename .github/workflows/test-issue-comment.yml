@@ -27,11 +27,11 @@ jobs:
         run: echo "Oi"
         
       - name: Printar a variável
-        run: echo "${{ github.event }}"
+        run: echo "${{ toJson(github.event) }}"
 
   mark-status-success:
     name: Print github
     runs-on: ubuntu-latest
     steps:
       - name: Printar a github
-        run: echo "${{ github }}"
+        run: echo "${{ toJson(github) }}"
