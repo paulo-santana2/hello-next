@@ -3,22 +3,6 @@ name: Testes
 on: [pull_request]
 
 jobs:
-  mark-commit-status-pending:
-    name: Marcar "status" do commit como "pending"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fazer request contra a API do Github com status "pending"
-        run: |
-          curl -L -X POST \
-          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "state": "pending",
-            "context": "tests",
-            "description": "Aguardando os testes"
-            }'
-
   build-and-test:
     name: Rodar os testes localmente
     runs-on: ubuntu-latest
