@@ -1,4 +1,5 @@
 const waitOn = require('wait-on');
+const os = require('os');
 const child_process = require('child_process');
 const environment = process.env.NODE_ENV || 'test';
 
@@ -23,7 +24,11 @@ function createServer() {
 
   function stop() {
     if (localServerProcess) {
-      localServerProcess.kill('SIGINT');
+      if (os.platform() === 'win32') {
+        child_process.execSync(`taskkill /F /T /PID ${localServerProcess.pid}`);
+      } else {
+        localServerProcess.kill('SIGINT');
+      }
     }
   }
 
