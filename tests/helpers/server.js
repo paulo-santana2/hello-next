@@ -27,7 +27,7 @@ function createServer() {
       if (process.platform === 'win32') {
         child_process.execSync(`taskkill /F /T /PID ${localServerProcess.pid}`);
       } else {
-        localServerProcess.kill('SIGINT');
+        localServerProcess.kill('SIGKILL');
       }
     }
   }
