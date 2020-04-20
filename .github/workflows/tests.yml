@@ -9,8 +9,12 @@ jobs:
 
     
     steps:
+    
     - name: puxar o código do cmmit
       uses: actions/checkout@v2
+    
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
 
     - name: Instalar o Node.js
       uses: actions/setup-node@v1
@@ -22,7 +26,6 @@ jobs:
       
     - name: rodar os testes
       run: npm test
-      shell: bash
       
     - name: Fazer request contra a API do Github final
       if: always()
