@@ -8,8 +8,9 @@ beforeAll(async () => {
   await server.start();
 });
 
-afterAll(async () => {
+afterAll(async (done) => {
   await server.stop();
+  done();
 });
 
 describe('/randomQuote (E2E)', () => {
