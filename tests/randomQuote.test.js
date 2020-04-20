@@ -34,7 +34,7 @@ describe('/randomQuote (E2E)', () => {
     expect(a).toEqual(2);
   });
   
-  test('Teste horrível', () => {
+  test.skip('Teste horrível', () => {
     expect(2 + 2).toBe(5);
   });
 });
