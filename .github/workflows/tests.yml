@@ -22,6 +22,7 @@ jobs:
       
     - name: rodar os testes
       run: npm test
+      shell: bash
       
     - name: Fazer request contra a API do Github final
       if: always()
