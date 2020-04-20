@@ -33,4 +33,8 @@ describe('/randomQuote (E2E)', () => {
     const a = 2;
     expect(a).toEqual(2);
   });
+  
+  test('Teste horrível', () => {
+    expect(2 + 2).toBe(5);
+  });
 });
