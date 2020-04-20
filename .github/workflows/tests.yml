@@ -13,9 +13,6 @@ jobs:
     - name: puxar o código do cmmit
       uses: actions/checkout@v2
     
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2
-
     - name: Instalar o Node.js
       uses: actions/setup-node@v1
       with:
@@ -23,7 +20,10 @@ jobs:
 
     - name: Instalar as dependências do npm
       run: npm install
-      
+    
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
+    
     - name: rodar os testes
       run: npm test
       
