@@ -18,8 +18,11 @@ function createServer() {
   }
 
   function startLocalServer() {
-    const cmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-    return child_process.spawn(cmd, ['run', 'dev']);
+    if(process.platform === 'win32') {
+      return child_process.spawn('npm.cmd', ['run', 'dev']);
+    } else {
+      return child_process.spawn('node', ['node_modules/.bin/next']);
+    }
   }
 
   function stop() {
